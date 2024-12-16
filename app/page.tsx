@@ -1,101 +1,96 @@
+import HomeCard from "@/components/shared/HomeCard";
 import Image from "next/image";
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <>
+      <section className="w-full relative bg-[#E9EBF0] pb-[114px] rounded-b-[63px]">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/assets/images/home-img.png"
+          alt="home page"
+          width={1440}
+          height={782}
+          className="w-full h-[782px] object-cover rounded-b-[63px]"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="max-w-[603px] absolute top-[156px] left-0 right-0 mx-auto  z-20 text-center">
+          <h1 className="text-[57px] font-bold text-white">
+            Welcome to - Architex.land
+          </h1>
+          <p className="text-base text-white">
+            Your ultimate resource for architects, studios, and landowners.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* search component */}
+        {/* <div></div> */}
+
+        <div className="max-w-[1070px] mx-auto mt-[125px] flex flex-col gap-[45px]">
+          <div className="flex flex-col gap-[10px]">
+            <h3 className="text-[#09121F] font-bold text-[45px]">
+              What you get
+            </h3>
+            <p className="text-base text-[#09121F]">
+              Download quality assets and templates from global artists, with
+              one great-value subscription.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-[70px]">
+            <HomeCard
+              image="/assets/images/file-info-line.png"
+              text="Detailed insights on the specific building regulations for the land"
+              title="Regulatory information"
+            />
+            <HomeCard
+              image="/assets/images/shape-2-line.png"
+              text="Accurate land measurements, including shape, form, and size in both square feet and square meters."
+              title="Land Dimensions"
+            />
+            <HomeCard
+              image="/assets/images/message-2-line.png"
+              text="Detailed insights on the specific building regulations for the land"
+              title="Development Recommendations"
+            />
+            <HomeCard
+              image="/assets/images/road-map-line.png"
+              text="View the exact location of the plot with an interactive map feature."
+              title="Google Map"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full py-20">
+        <div className="max-w-[1070px] mx-auto flex flex-col gap-[25px]">
+          <h3 className="text-white font-bold text-[45px]">Our Partners</h3>
+          <div className="flex items-center gap-[25px]">
+            <Image
+              src="/assets/images/partner-img-1.png"
+              alt="partner"
+              width={340}
+              height={169}
+            />
+            <Image
+              src="/assets/images/partner-img-2.png"
+              alt="partner"
+              width={340}
+              height={169}
+            />
+
+            <Image
+              src="/assets/images/partner-img-3.png"
+              alt="partner"
+              width={340}
+              height={169}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-[#E9EBF0] rounded-[63px] h-[628px]"></section>
+    </>
   );
-}
+};
+
+export default HomePage;
