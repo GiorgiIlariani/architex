@@ -1,4 +1,5 @@
 import PriceCard from "@/components/shared/PriceCard";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const PricingPage = () => {
@@ -26,6 +27,21 @@ const PricingPage = () => {
         <PriceCard />
         <PriceCard />
         <PriceCard />
+      </div>
+
+      <div className="mt-[179px] flex justify-between items-center max-w-[1070px] mx-auto">
+        <h3 className="text-[45px] font-bold text-[#09121F]">
+          Or pay per LookUp
+        </h3>
+
+        <div className="flex flex-col gap-6 items-start">
+          <p className="text-base font-medium text-[#09121F]">
+            Add save it in the history for free <br /> research later
+          </p>
+          <Button className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F]">
+            Select
+          </Button>
+        </div>
       </div>
     </section>
   );

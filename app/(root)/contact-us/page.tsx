@@ -37,7 +37,7 @@ const ContactUsPage = () => {
             form="contact-form"
             className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F]"
           >
-            Send
+            Select
           </Button>
         </div>
       </div>
