@@ -17,7 +17,7 @@ const HomePage = () => {
           <h1 className="text-[57px] font-bold text-white">
             Welcome to - Architex.land
           </h1>
-          <p className="text-base text-white">
+          <p className="text-base text-white max-w-[300px] mx-auto">
             Your ultimate resource for architects, studios, and landowners.
           </p>
         </div>
