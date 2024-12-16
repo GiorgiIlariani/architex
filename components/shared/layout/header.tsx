@@ -41,7 +41,7 @@ const HeaderComponent = () => {
         })}
       </div>
 
-      <Button className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px]">
+      <Button className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]">
         Log in
       </Button>
     </header>

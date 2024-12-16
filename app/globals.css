@@ -6,7 +6,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer base {
+@layer utilities {
+  .input {
+    @apply bg-white h-[55px] rounded-[19px] text-[#09121F] placeholder:text-[#747D8A] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
+  }
+  .textarea {
+    @apply bg-white rounded-[19px] text-[#09121F] placeholder:text-[#747D8A] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
+  }
+}
+
+/* @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -69,4 +78,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
