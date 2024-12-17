@@ -34,10 +34,9 @@ const SearchHistoryPage = () => {
                   <tr key={index} className="border-b border-gray-300">
                     <td className="p-4">{entry.date}</td>
                     <td className="p-4">
-                      {" "}
                       <span className="bg-[#E6E6E6] p-[6px]">
                         {entry.address}
-                      </span>{" "}
+                      </span>
                     </td>
                   </tr>
                 ))}
