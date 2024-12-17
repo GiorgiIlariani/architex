@@ -13,7 +13,7 @@ const HomePage = () => {
           className="w-full h-[782px] object-cover rounded-b-[63px]"
         />
 
-        <div className="max-w-[603px] absolute top-[156px] left-0 right-0 mx-auto  z-20 text-center">
+        <div className="max-w-[603px] absolute top-[156px] left-0 right-0 mx-auto text-center">
           <h1 className="text-[57px] font-bold text-white">
             Welcome to - Architex.land
           </h1>

@@ -1,4 +1,4 @@
-import { ProfileForm } from "@/components/forms/ContactForm";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
@@ -30,14 +30,14 @@ const ContactUsPage = () => {
             </div>
           </div>
           <div className="w-full bg-[#FFFFFF99] rounded-[21px] p-[22px]">
-            <ProfileForm />
+            <ContactForm />
           </div>
           <Button
             type="submit"
             form="contact-form"
             className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F]"
           >
-            Select
+            Send
           </Button>
         </div>
       </div>

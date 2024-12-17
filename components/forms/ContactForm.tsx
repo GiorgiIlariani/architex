@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
 import { contactFormSchema } from "@/lib/validation";
 
-export function ProfileForm() {
+export function ContactForm() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
