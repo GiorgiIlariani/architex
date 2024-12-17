@@ -19,3 +19,10 @@ export const LogInFormSchema = z.object({
   email: z.string().email(),
   password: z.string().min(2, "minimum 2 characters"),
 });
+
+export const ProfileSettingsFormSchema = z.object({
+  firstName: z.string().min(2, "minimum 2 characters"),
+  lastName: z.string().min(2, "minimum 2 charachters"),
+  phoneNumber: z.string().min(2, "minimum 2 charachters"),
+  email: z.string().email(),
+});

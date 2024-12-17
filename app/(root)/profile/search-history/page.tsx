@@ -31,10 +31,17 @@ const SearchHistoryPage = () => {
               </thead>
               <tbody>
                 {searchHistory.map((entry, index) => (
-                  <tr key={index} className="border-b border-gray-300">
+                  <tr
+                    key={index}
+                    className={`${
+                      index !== searchHistory.length - 1
+                        ? "border-b border-gray-300"
+                        : ""
+                    }`}
+                  >
                     <td className="p-4">{entry.date}</td>
                     <td className="p-4">
-                      <span className="bg-[#E6E6E6] p-[6px]">
+                      <span className="bg-[#E6E6E6] p-[6px] rounded-[5px]">
                         {entry.address}
                       </span>
                     </td>
