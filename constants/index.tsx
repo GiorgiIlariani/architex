@@ -69,3 +69,85 @@ export const faqsConstants = [
       "If you encounter a technical issue, please contact our support team with a detailed description of the problem, including any error messages you receive.",
   },
 ];
+
+export const profileLeftSidebarConstants = [
+  {
+    img: "/assets/images/profile-leftsidebar-img1.png",
+    text: "Home",
+    route: "/profile",
+  },
+  {
+    img: "/assets/images/profile-leftsidebar-img2.png",
+    text: "Search History",
+    route: "/profile/search-history",
+  },
+  {
+    img: "/assets/images/profile-leftsidebar-img3.png",
+    text: "Payment History",
+    route: "/profile/payment-history",
+  },
+  {
+    img: "/assets/images/profile-leftsidebar-img4.png",
+    text: "Settings",
+    route: "/profile/settings",
+  },
+];
+
+export const paymentHistoryConstants = [
+  {
+    id: 1,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 2,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 3,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 4,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 5,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 6,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 7,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+  {
+    id: 8,
+    date: "12/11/2024",
+    type: "Basic",
+    isSuccessful: true,
+    price: 10,
+  },
+];
