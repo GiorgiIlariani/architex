@@ -16,7 +16,7 @@ body {
   }
 
   .profile-settings-input {
-    @apply bg-white h-[41px] rounded-[19px] text-[#09121F] px-6 py-[10px] text-base border-white focus:border focus:border-[#F7A33C];
+    @apply bg-white h-[41px] rounded-[10px] text-[#09121F] px-6 py-[10px] text-base border-white focus:border focus:border-[#F7A33C];
   }
 
   .textarea {

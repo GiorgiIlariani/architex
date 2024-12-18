@@ -151,3 +151,40 @@ export const paymentHistoryConstants = [
     price: 10,
   },
 ];
+
+export const profileHomeResultConstants = [
+  {
+    id: 1,
+    coordinates: "41.40338, 2.17403",
+    isSaved: false,
+    img: "/assets/images/profile-result-card-img.png",
+    label: ["Label1", "Label2", "Label3"],
+  },
+  {
+    id: 2,
+    coordinates: "41.40338, 2.17403",
+    isSaved: true,
+    img: "/assets/images/profile-result-card-img.png",
+    label: ["Label1", "Label2", "Label3", "Label1", "Label2", "Label3"],
+  },
+  {
+    id: 3,
+    coordinates: "41.40338, 2.17403",
+    isSaved: false,
+    img: "/assets/images/profile-result-card-img.png",
+    label: ["Label1", "Label2"],
+  },
+];
+
+export const searchHistoryConstants = [
+  { date: "2024/04/01", address: "41.40338, 2.17401" },
+  { date: "2024/04/05", address: "41.40338, 2.17402" },
+  { date: "2024/04/10", address: "41.40338, 2.17403" },
+  { date: "2024/04/10", address: "41.40338, 2.17403" },
+  { date: "2024/04/10", address: "41.40338, 2.17403" },
+  { date: "2024/04/10", address: "41.40338, 2.17404" },
+  { date: "2024/04/10", address: "41.40338, 2.17405" },
+  { date: "2024/04/10", address: "41.40338, 2.17406" },
+  { date: "2024/04/10", address: "41.40338, 2.17407" },
+  { date: "2024/04/10", address: "41.40338, 2.17408" },
+];

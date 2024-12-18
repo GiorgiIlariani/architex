@@ -10,6 +10,9 @@ import { LogInForm } from "@/components/forms/LogInForm";
 import { SignUpWithEmailForm } from "@/components/forms/SignUpWithEmailForm";
 import { Input } from "@/components/ui/input";
 import { usePathname } from "next/navigation";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import LoggedInUser from "./LoggedInUser";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const HeaderComponent = () => {
   const pathname = usePathname();
@@ -21,7 +24,7 @@ const HeaderComponent = () => {
   const [code, setCode] = useState("");
 
   // Simulate authenticated status for showcasing
-  const isAuthenticated = true; // Change to `true` to simulate email verification view
+  const isAuthenticated = false; // Change to `true` to simulate email verification view
 
   const openModal = (method: "sign-up" | "sign-in") => {
     setIsModalOpen(true);
@@ -39,11 +42,15 @@ const HeaderComponent = () => {
     setIsSignUpWithEmail(false);
   };
 
+  let user = {
+    firstLetterOfName: "G",
+  };
+
   return (
     <header
       className={`absolute ${
         pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
-      } top-[18px] left-0 right-0 mx-auto max-w-[1264px] h-[73px] rounded-[21px] flex justify-between items-center px-[22px] z-10`}
+      } top-[18px] left-4 right-4 mx-auto max-w-[1264px] h-[73px] rounded-[21px] flex justify-between items-center px-[22px] z-10`}
     >
       <Link href="/">
         <Image
@@ -54,7 +61,7 @@ const HeaderComponent = () => {
         />
       </Link>
 
-      <div className="flex items-center gap-7">
+      <div className="items-center gap-7 hidden md:flex">
         {headerConstants.map((item) => {
           const isActive = item.route === pathname;
 
@@ -72,12 +79,22 @@ const HeaderComponent = () => {
         })}
       </div>
 
-      <Button
-        className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
-        onClick={() => openModal("sign-in")}
-      >
-        Log in
-      </Button>
+      {/* {user ? (
+        <LoggedInUser user={user} />
+      ) : ( */}
+      <div className="flex gap-[7px] items-center">
+        <Button
+          className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
+          onClick={() => openModal("sign-in")}
+        >
+          Log in
+        </Button>
+        <div className="block md:hidden">
+          <GiHamburgerMenu />
+        </div>
+      </div>
+
+      {/* )} */}
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-row">

@@ -3,3 +3,10 @@ declare interface HomeCardTypes {
   title: string;
   text: string;
 }
+
+declare interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPrevious: () => void;
+  onNext: () => void;
+}
