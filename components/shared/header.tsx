@@ -10,7 +10,7 @@ import { LogInForm } from "@/components/forms/LogInForm";
 import { SignUpWithEmailForm } from "@/components/forms/SignUpWithEmailForm";
 import { Input } from "@/components/ui/input";
 import { usePathname } from "next/navigation";
-import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 import LoggedInUser from "./LoggedInUser";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -22,9 +22,14 @@ const HeaderComponent = () => {
     null
   );
   const [code, setCode] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Simulate authenticated status for showcasing
   const isAuthenticated = false; // Change to `true` to simulate email verification view
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
 
   const openModal = (method: "sign-up" | "sign-in") => {
     setIsModalOpen(true);
@@ -42,15 +47,19 @@ const HeaderComponent = () => {
     setIsSignUpWithEmail(false);
   };
 
-  let user = {
-    firstLetterOfName: "G",
-  };
+  // let user = {
+  //   firstLetterOfName: "G",
+  // };
+
+  let user;
 
   return (
     <header
-      className={`absolute ${
+      className={`absolute backdrop-blur-[5px] ${
         pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
-      } top-[18px] left-4 right-4 mx-auto max-w-[1264px] h-[73px] rounded-[21px] flex justify-between items-center px-[22px] z-10`}
+      } top-[18px] left-4 right-4 mx-auto max-w-[1264px] h-[73px] ${
+        isMobileMenuOpen ? "rounded-t-[21px]" : "rounded-[21px]"
+      }  flex justify-between items-center px-[22px] z-10`}
     >
       <Link href="/">
         <Image
@@ -90,8 +99,34 @@ const HeaderComponent = () => {
             Log in
           </Button>
           <div className="block md:hidden">
-            <GiHamburgerMenu />
+            <button onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? <MdClose /> : <GiHamburgerMenu />}
+            </button>
           </div>
+          {isMobileMenuOpen && (
+            <div
+              className={`absolute top-full left-0 right-0  ${
+                pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
+              } rounded-b-[21px] py-4 flex flex-col items-center gap-[14px] md:hidden z-20`}
+            >
+              {headerConstants.map((item) => {
+                const isActive = item.route === pathname;
+
+                return (
+                  <Link
+                    key={item.route}
+                    href={item.route}
+                    className={`${
+                      isActive ? "text-[#F7A33C]" : "text-[#09121F]"
+                    } text-xl`}
+                    onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                  >
+                    {item.text}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
 

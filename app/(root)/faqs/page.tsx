@@ -77,11 +77,11 @@ const FAQsPage = () => {
 
         {submittedTerm && (
           <div className="flex justify-center mt-4">
-            <div className="inline-flex items-center bg-[#09121F] text-white px-4 py-2 rounded-[13px]">
-              <p className="text-base">{submittedTerm}</p>
+            <div className="inline-flex items-center bg-white  text-white p-[10px] py-1 md:px-4 md:py-2 rounded-[13px]">
+              <p className="text-base text-[#09121F]">{submittedTerm}</p>
               <Button
                 onClick={clearSearch}
-                className="ml-2 text-white text-xl font-bold cursor-pointer"
+                className="ml-2 text-white text-xl font-bold cursor-pointer bg-[#09121F] hover:bg-[#09121F] rounded-[10px] p-3"
               >
                 &times;
               </Button>

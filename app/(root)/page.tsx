@@ -14,10 +14,10 @@ const HomePage = () => {
         />
 
         <div className="max-w-[603px] absolute top-[156px] left-0 right-0 mx-auto text-center">
-          <h1 className="text-[57px] font-bold text-white">
+          <h1 className="text-[40px] lg:text-[57px] font-bold text-white">
             Welcome to - Architex.land
           </h1>
-          <p className="text-base text-white max-w-[300px] mx-auto">
+          <p className="text-sm lg:text-base text-white max-w-[300px] mx-auto">
             Your ultimate resource for architects, studios, and landowners.
           </p>
         </div>
@@ -25,18 +25,18 @@ const HomePage = () => {
         {/* search component */}
         {/* <div></div> */}
 
-        <div className="max-w-[1070px] mx-auto mt-[125px] flex flex-col gap-[45px]">
+        <div className="max-w-[1070px] mx-auto mt-[125px] flex flex-col gap-9 lg:gap-[45px]">
           <div className="flex flex-col gap-[10px]">
-            <h3 className="text-[#09121F] font-bold text-[45px]">
+            <h3 className="text-[28px] text-[#09121F] font-bold md:text-[45px] text-center">
               What you get
             </h3>
-            <p className="text-base text-[#09121F]">
+            <p className="text-sm md:text-base md:font-medium text-[#09121F] text-center">
               Download quality assets and templates from global artists, with
               one great-value subscription.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-[70px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-10 xl:gap-[70px] px-4">
             <HomeCard
               image="/assets/images/file-info-line.png"
               text="Detailed insights on the specific building regulations for the land"
@@ -62,9 +62,11 @@ const HomePage = () => {
       </section>
 
       <section className="w-full py-20">
-        <div className="max-w-[1070px] mx-auto flex flex-col gap-[25px]">
-          <h3 className="text-white font-bold text-[45px]">Our Partners</h3>
-          <div className="flex items-center gap-[25px]">
+        <div className="max-w-[1070px] mx-auto flex flex-col gap-[25px] px-4">
+          <h3 className="text-white font-bold lg:text-[45px] text-[28px]">
+            Our Partners
+          </h3>
+          <div className="flex flex-col lg:flex-row items-center gap-[25px]">
             <Image
               src="/assets/images/partner-img-1.png"
               alt="partner"
