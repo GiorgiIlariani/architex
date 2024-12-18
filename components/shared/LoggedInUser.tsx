@@ -15,7 +15,7 @@ const LoggedInUser = ({ user }: { user: { firstLetterOfName: string } }) => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>
             {" "}
-            <div className="w-[37px] h-[37px] flex items-center justify-center bg-[#D9D9D9]">
+            <div className="w-[37px] h-[37px] flex items-center justify-center bg-[#D9D9D9] rounded-full">
               <p className="text-sm text-[#09121F]">
                 {user?.firstLetterOfName}
               </p>

@@ -49,7 +49,7 @@ export function ProfileSettingsForm() {
     console.log("Account removed");
   }
 
-  const isCodeCorrect = true;
+  const isCodeCorrect = false;
 
   return (
     <Form {...form}>
@@ -168,6 +168,8 @@ export function ProfileSettingsForm() {
                       Change password
                     </DialogTitle>
                   </DialogHeader>
+
+                  <ChangePasswordForm />
 
                   <DialogFooter className="flex justify-end gap-4 mt-6">
                     <div className="w-full flex items-center justify-center">

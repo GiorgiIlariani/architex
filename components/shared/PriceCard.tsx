@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const PriceCard = () => {
   return (
-    <div className="w-full bg-[#FFFFFF99] rounded-[21px] p-[22px]">
+    <div className="w-full bg-[#FFFFFF99] rounded-[21px] p-[15px] lg:p-[22px]">
       <div className="bg-white flex flex-col items-start justify-between gap-4 p-5 rounded-[19px]">
         <span className="rounded-[10px] p-[10px] bg-[#F7A33C] text-p[#09121F">
           Basic

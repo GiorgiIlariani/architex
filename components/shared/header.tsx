@@ -24,7 +24,7 @@ const HeaderComponent = () => {
   const [code, setCode] = useState("");
 
   // Simulate authenticated status for showcasing
-  const isAuthenticated = true; // Change to `true` to simulate email verification view
+  const isAuthenticated = false; // Change to `true` to simulate email verification view
 
   const openModal = (method: "sign-up" | "sign-in") => {
     setIsModalOpen(true);
@@ -79,21 +79,21 @@ const HeaderComponent = () => {
         })}
       </div>
 
-      {/* {user ? (
+      {user ? (
         <LoggedInUser user={user} />
-      ) : ( */}
-      <div className="flex gap-[14px] items-center">
-        <Button
-          className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
-          onClick={() => openModal("sign-in")}
-        >
-          Log in
-        </Button>
-        <div className="block md:hidden">
-          <GiHamburgerMenu />
+      ) : (
+        <div className="flex gap-[14px] items-center">
+          <Button
+            className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
+            onClick={() => openModal("sign-in")}
+          >
+            Log in
+          </Button>
+          <div className="block md:hidden">
+            <GiHamburgerMenu />
+          </div>
         </div>
-      </div>
-      {/* )} */}
+      )}
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-row">
