@@ -12,7 +12,7 @@ body {
   }
 
   .auth-input {
-    @apply bg-white h-[45px] rounded-[19px] text-[#09121F] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
+    @apply bg-white h-[45px] rounded-[10px] text-[#09121F] px-[18px] py-[13px] text-base border border-[#E9EBF0] focus:border focus:border-[#F7A33C];
   }
 
   .profile-settings-input {

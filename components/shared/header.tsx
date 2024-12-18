@@ -55,7 +55,7 @@ const HeaderComponent = () => {
 
   return (
     <header
-      className={`absolute backdrop-blur-[5px] ${
+      className={`absolute ${
         pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
       } top-[18px] left-4 right-4 mx-auto max-w-[1264px] h-[73px] ${
         isMobileMenuOpen ? "rounded-t-[21px]" : "rounded-[21px]"
@@ -133,7 +133,7 @@ const HeaderComponent = () => {
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-row">
           <div className="flex-1">
-            <div className="flex flex-col py-[44px] px-[60px]">
+            <div className="flex flex-col py-[65px] md:py-[44px] px-[31px] md:px-[60px]">
               <div className="flex flex-col gap-[9px]">
                 {isAuthenticated ? (
                   <>
@@ -229,25 +229,29 @@ const HeaderComponent = () => {
                       )}
                     </div>
                   </div>
-                  <p className="mt-[60px] text-[13px] text-[#00000040] text-center">
-                    By continuing, you accept our{" "}
-                    <span className="text-[#09121F] underline">
-                      Privacy Policy
-                    </span>
-                  </p>
+                  {authMethod === "sign-up" && (
+                    <p className="mt-[60px] text-[13px] text-[#00000040] text-center">
+                      By continuing, you accept our{" "}
+                      <span className="text-[#09121F] underline">
+                        Privacy Policy
+                      </span>
+                    </p>
+                  )}
                 </>
               ) : isSignUpWithEmail ? (
                 <SignUpWithEmailForm />
               ) : null}
             </div>
           </div>
-          <Image
-            src="/assets/images/registration-modal.png"
-            alt="img"
-            width={232}
-            height={517}
-            className="max-w-[232px] max-h-[517px]"
-          />
+          <div className="hidden sm:block">
+            <Image
+              src="/assets/images/registration-modal.png"
+              alt="img"
+              width={232}
+              height={517}
+              className="max-w-[232px] max-h-[517px]"
+            />
+          </div>
         </div>
       </Modal>
     </header>

@@ -166,7 +166,7 @@ export function SignUpWithEmailForm() {
             )}
           />
         </div>
-        <Button className="w-full rounded-[10px] font-semibold text-white text-base bg-[#09121F] cursor-pointer py-[10px] px-[18px]">
+        <Button className="w-full rounded-[10px] font-semibold text-white text-base bg-[#09121F] hover:bg-[#09121F] cursor-pointer py-[10px] px-[18px]">
           Sign Up
         </Button>
       </form>
