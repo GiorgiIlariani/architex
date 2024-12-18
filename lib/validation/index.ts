@@ -26,3 +26,9 @@ export const ProfileSettingsFormSchema = z.object({
   phoneNumber: z.string().min(2, "minimum 2 charachters"),
   email: z.string().email(),
 });
+
+export const ChangePasswordFormSchema = z.object({
+  oldPassword: z.string().min(2, "minimum 2 characters"),
+  password: z.string().min(2, "minimum 2 characters"),
+  repeatPassword: z.string().min(2, "minimum 2 characters"),
+});

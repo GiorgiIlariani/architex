@@ -25,6 +25,7 @@ import {
   DialogTitle,
 } from "../ui/dialog";
 import { useState } from "react";
+import { ChangePasswordForm } from "./ChangePasswordForm";
 
 export function ProfileSettingsForm() {
   const [code, setCode] = useState("");
@@ -47,6 +48,8 @@ export function ProfileSettingsForm() {
     // Logic to handle account removal
     console.log("Account removed");
   }
+
+  const isCodeCorrect = true;
 
   return (
     <Form {...form}>
@@ -158,45 +161,67 @@ export function ProfileSettingsForm() {
               </span>
             }
             content={
-              <>
-                <DialogHeader>
-                  <DialogTitle className="text-xl text-[#09121F] font-bold text-center">
-                    Verify your email
-                  </DialogTitle>
-                  <div className="my-[9px]" />
-                  <DialogDescription className="text-sm text-center text-[#747D8A]">
-                    We've sent you Code, to sure that email address is yours.
-                    So, check inbox and continue there.
-                  </DialogDescription>
-                </DialogHeader>
+              isCodeCorrect ? (
+                <>
+                  <DialogHeader>
+                    <DialogTitle className="text-xl text-[#09121F] font-bold text-center">
+                      Change password
+                    </DialogTitle>
+                  </DialogHeader>
 
-                <div className="max-w-[165px] mx-auto">
-                  <label htmlFor="code">Enter Code</label>
-                  <Input
-                    name="code"
-                    id="code"
-                    className="bg-white h-[45px] text-[#09121F] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C] rounded-[10px] mt-[6px] mb-[17px]"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
-                  />
-                  <div className="w-full items-center flex justify-center">
-                    <span className="text-[#09121F] font-medium text-base underline cursor-pointer w-full text-center">
-                      Resend
-                    </span>
+                  <DialogFooter className="flex justify-end gap-4 mt-6">
+                    <div className="w-full flex items-center justify-center">
+                      <Button
+                        type="submit"
+                        // onClick={onConfirm}
+                        className="bg-[#09121F] hover:bg-[#09121F] text-white py-[10px] px-[18px] rounded-[10px] text-base font-semibold"
+                      >
+                        Change Password
+                      </Button>
+                    </div>
+                  </DialogFooter>
+                </>
+              ) : (
+                <>
+                  <DialogHeader>
+                    <DialogTitle className="text-xl text-[#09121F] font-bold text-center">
+                      Verify your email
+                    </DialogTitle>
+                    <div className="my-[9px]" />
+                    <DialogDescription className="text-sm text-center text-[#747D8A]">
+                      We've sent you Code, to sure that email address is yours.
+                      So, check inbox and continue there.
+                    </DialogDescription>
+                  </DialogHeader>
+
+                  <div className="max-w-[165px] mx-auto">
+                    <label htmlFor="code">Enter Code</label>
+                    <Input
+                      name="code"
+                      id="code"
+                      className="bg-white h-[45px] text-[#09121F] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C] rounded-[10px] mt-[6px] mb-[17px]"
+                      value={code}
+                      onChange={(e) => setCode(e.target.value)}
+                    />
+                    <div className="w-full items-center flex justify-center">
+                      <span className="text-[#09121F] font-medium text-base underline cursor-pointer w-full text-center">
+                        Resend
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <DialogFooter className="flex justify-end gap-4 mt-6">
-                  <div className="w-full flex items-center justify-center">
-                    <Button
-                      variant="destructive"
-                      // onClick={onConfirm}
-                      className="bg-[#09121F] hover:bg-[#09121F] text-white py-[10px] px-[18px] rounded-[10px] text-base font-semibold"
-                    >
-                      Verify
-                    </Button>
-                  </div>
-                </DialogFooter>
-              </>
+
+                  <DialogFooter className="flex justify-end gap-4 mt-6">
+                    <div className="w-full flex items-center justify-center">
+                      <Button
+                        // onClick={onConfirm}
+                        className="bg-[#09121F] hover:bg-[#09121F] text-white py-[10px] px-[18px] rounded-[10px] text-base font-semibold"
+                      >
+                        Verify
+                      </Button>
+                    </div>
+                  </DialogFooter>
+                </>
+              )
             }
             onConfirm={() => {}}
           />
@@ -221,17 +246,13 @@ export function ProfileSettingsForm() {
                 <DialogFooter className="flex justify-end gap-4">
                   <div className="flex gap-[14.5px] w-full items-center justify-center">
                     <Button
-                      variant="destructive"
                       // onClick={onConfirm}
                       className="bg-[#E10C0C] hover:bg-[#E10C0C]  text-white py-[10px] px-[18px] rounded-[10px]"
                     >
                       Delete
                     </Button>
                     <DialogClose asChild>
-                      <Button
-                        variant="secondary"
-                        className="bg-[#09121F] hover:bg-[#09121F] text-white py-[10px] px-[18px] rounded-[10px]"
-                      >
+                      <Button className="bg-[#09121F] hover:bg-[#09121F] text-white py-[10px] px-[18px] rounded-[10px]">
                         Cancel
                       </Button>
                     </DialogClose>

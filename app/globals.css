@@ -22,4 +22,8 @@ body {
   .textarea {
     @apply bg-white rounded-[19px] text-[#09121F] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
   }
+
+  .profileChangePassword-input {
+    @apply bg-white rounded-[10px] text-[#09121F] px-[18px] py-[13px] text-base border-[#00000040] border;
+  }
 }

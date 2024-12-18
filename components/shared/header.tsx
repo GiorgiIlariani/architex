@@ -79,21 +79,21 @@ const HeaderComponent = () => {
         })}
       </div>
 
-      {user ? (
+      {/* {user ? (
         <LoggedInUser user={user} />
-      ) : (
-        <div className="flex gap-[7px] items-center">
-          <Button
-            className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
-            onClick={() => openModal("sign-in")}
-          >
-            Log in
-          </Button>
-          <div className="block md:hidden">
-            <GiHamburgerMenu />
-          </div>
+      ) : ( */}
+      <div className="flex gap-[14px] items-center">
+        <Button
+          className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
+          onClick={() => openModal("sign-in")}
+        >
+          Log in
+        </Button>
+        <div className="block md:hidden">
+          <GiHamburgerMenu />
         </div>
-      )}
+      </div>
+      {/* )} */}
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-row">
