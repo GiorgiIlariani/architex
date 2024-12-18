@@ -51,38 +51,40 @@ const FAQsPage = () => {
           FAQs
         </h1>
 
-        <div className="max-w-[438px] mx-auto relative mt-[50px]">
-          <Image
-            src="/assets/images/search-line.png"
-            alt="search icon"
-            width={32}
-            height={32}
-            className="absolute left-[14px] top-1"
-          />
-          <Input
-            placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-white rounded-[13px] text-[#09121F] placeholder:text-[#747D8A] px-[60px] py-5 text-base border-white"
-          />
-          <Button
-            onClick={handleSearch}
-            className="w-[98px] top-[2px] bg-[#09121F] absolute right-[6px] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F]"
-          >
-            Search
-          </Button>
+        <div className="px-4">
+          <div className="max-w-[438px] mx-auto relative mt-[50px] ">
+            <Image
+              src="/assets/images/search-line.png"
+              alt="search icon"
+              width={32}
+              height={32}
+              className="absolute left-[14px] top-1"
+            />
+            <Input
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="bg-white rounded-[13px] text-[#09121F] placeholder:text-[#747D8A] px-[60px] py-5 text-base border-white"
+            />
+            <Button
+              onClick={handleSearch}
+              className="w-[98px] top-[2px] bg-[#09121F] absolute right-[6px] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F]"
+            >
+              Search
+            </Button>
+          </div>
         </div>
 
         {submittedTerm && (
           <div className="flex justify-center mt-4">
             <div className="inline-flex items-center bg-[#09121F] text-white px-4 py-2 rounded-[13px]">
               <p className="text-base">{submittedTerm}</p>
-              <button
+              <Button
                 onClick={clearSearch}
                 className="ml-2 text-white text-xl font-bold cursor-pointer"
               >
                 &times;
-              </button>
+              </Button>
             </div>
           </div>
         )}
