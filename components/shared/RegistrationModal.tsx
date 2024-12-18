@@ -25,7 +25,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
       ></div>
 
       <div
-        className={`relative z-30 bg-white shadow-lg rounded-[25px] transition-transform duration-300 ${
+        className={`w-full sm:w-auto relative z-30 bg-white shadow-lg rounded-[25px] transition-transform duration-300 ${
           isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
