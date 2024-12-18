@@ -6,6 +6,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import Link from "next/link";
 
 const LoggedInUser = ({ user }: { user: { firstLetterOfName: string } }) => {
   return (
@@ -22,12 +23,9 @@ const LoggedInUser = ({ user }: { user: { firstLetterOfName: string } }) => {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
             <div className="w-[121px] p-3 flex flex-col">
-              <NavigationMenuLink
-                href="/profile"
-                className="py-1 px-[10px] text-[#09121F]"
-              >
+              <Link href="/profile" className="py-1 px-[10px] text-[#09121F]">
                 My Profile
-              </NavigationMenuLink>
+              </Link>
               <NavigationMenuLink className="py-1 px-[10px] cursor-pointer text-[#E10C0C]">
                 Log out
               </NavigationMenuLink>

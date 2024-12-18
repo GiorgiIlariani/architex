@@ -10,3 +10,9 @@ declare interface PaginationProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+declare interface ConfirmDialogProps {
+  trigger: ReactNode;
+  content: ReactNode;
+  onConfirm: () => void;
+}
