@@ -21,7 +21,7 @@ const HomeResultPage = async ({
         Home
       </h1>
 
-      <div className="flex flex-col md:flex-row gap-5 md:gap-8 lg:gap-[49px] mt-8">
+      <div className="flex flex-col items-center md:items-start md:flex-row gap-8 lg:gap-[49px] mt-8">
         <div className="w-full md:w-auto">
           <Link
             href="/profile/home"
