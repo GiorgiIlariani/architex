@@ -7,7 +7,7 @@ import React from "react";
 const SettingsPage = () => {
   return (
     <div className="flex-1 min-h-screen">
-      <h1 className="text-[#09121F] text-[45px] font-bold pt-[41px]">
+      <h1 className="text-[#09121F] text-[45px] font-bold pt-[41px] text-center md:text-left">
         Settings
       </h1>
 

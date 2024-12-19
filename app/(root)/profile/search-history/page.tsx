@@ -41,33 +41,37 @@ const SearchHistoryPage = () => {
         <>
           <div className="mt-8 bg-white rounded-[19px]">
             <div className="w-full py-[18px] px-10">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-gray-300">
-                    <th className="p-4 text-left">Date</th>
-                    <th className="p-4 text-left">Address</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {currentData.map((entry, index) => (
-                    <tr
-                      key={index}
-                      className={`${
-                        index !== currentData.length - 1
-                          ? "border-b border-gray-300"
-                          : ""
-                      }`}
-                    >
-                      <td className="p-5">{entry.date}</td>
-                      <td className="p-5">
-                        <span className="bg-[#E6E6E6] p-[6px] rounded-[5px]">
-                          {entry.address}
-                        </span>
-                      </td>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-300">
+                      <th className="px-0 lg:px-5 py-5 text-left">Date</th>
+                      <th className="px-0 lg:px-5 py-5 text-left">Address</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {currentData.map((entry, index) => (
+                      <tr
+                        key={index}
+                        className={`${
+                          index !== currentData.length - 1
+                            ? "border-b border-gray-300"
+                            : ""
+                        }`}
+                      >
+                        <td className="py-5 px-0 lg:px-5 w-full">
+                          {entry.date}
+                        </td>
+                        <td className="py-5 px-0 lg:px-5 w-full">
+                          <span className="bg-[#E6E6E6] p-[6px] rounded-[5px] text-nowrap">
+                            {entry.address}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 

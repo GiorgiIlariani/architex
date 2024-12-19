@@ -9,7 +9,9 @@ const Profile = () => {
 
   return (
     <div className="flex-1 min-h-screen">
-      <h1 className="text-[#09121F] text-[45px] font-bold pt-[41px]">Home</h1>
+      <h1 className="hidden md:block text-[#09121F] text-[45px] font-bold pt-[41px]">
+        Home
+      </h1>
 
       {/* map over the result */}
       {result.length === 0 ? (
@@ -26,7 +28,7 @@ const Profile = () => {
           </span>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-6 rounded-[14px] mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-[14px] mt-8">
           {result.map((res) => {
             return (
               <div
@@ -60,7 +62,7 @@ const Profile = () => {
                       alt="img"
                       width={403}
                       height={223}
-                      className=""
+                      className="w-full"
                     />
 
                     <div className="flex flex-col gap-6">
@@ -72,7 +74,6 @@ const Profile = () => {
                       </div>
                       <Separator className="border border-[#D9D9D9]" />
 
-                      {/* here i want labels but show only 1 and border b or separator with mt-[27px] mb-6 */}
                       <div>
                         {res.label.length > 0 && (
                           <>
@@ -91,7 +92,7 @@ const Profile = () => {
                     </div>
                   </div>
                   <Link
-                    href={`/profile/${res.coordinates}`}
+                    href={`/profile/home/${res.id}`}
                     className="text-[#09121F] font-medium text-base text-center"
                   >
                     See more

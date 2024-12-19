@@ -74,7 +74,7 @@ export const profileLeftSidebarConstants = [
   {
     img: "/assets/images/profile-leftsidebar-img1.png",
     text: "Home",
-    route: "/profile",
+    route: "/profile/home",
   },
   {
     img: "/assets/images/profile-leftsidebar-img2.png",
@@ -187,4 +187,52 @@ export const searchHistoryConstants = [
   { date: "2024/04/10", address: "41.40338, 2.17406" },
   { date: "2024/04/10", address: "41.40338, 2.17407" },
   { date: "2024/04/10", address: "41.40338, 2.17408" },
+];
+
+export const testimonyConstans = [
+  {
+    id: 1,
+    title: "Regulatory information",
+    details:
+      "Detailed insights on the specific building regulations for the land",
+    img: "/assets/images/testimony-profile-img.png",
+    fullName: "David Schone",
+    proffession: "CEO",
+  },
+  {
+    id: 2,
+    title: "Regulatory information2",
+    details:
+      "Detailed insights on the specific building regulations for the land",
+    img: "/assets/images/testimony-profile-img.png",
+    fullName: "David Schone",
+    proffession: "CEO",
+  },
+  {
+    id: 3,
+    title: "Regulatory information3",
+    details:
+      "Detailed insights on the specific building regulations for the land",
+    img: "/assets/images/testimony-profile-img.png",
+    fullName: "David Schone",
+    proffession: "CEO",
+  },
+  {
+    id: 4,
+    title: "Regulatory information4",
+    details:
+      "Detailed insights on the specific building regulations for the land",
+    img: "/assets/images/testimony-profile-img.png",
+    fullName: "David Schone",
+    proffession: "CEO",
+  },
+  {
+    id: 5,
+    title: "Regulatory information5",
+    details:
+      "Detailed insights on the specific building regulations for the land",
+    img: "/assets/images/testimony-profile-img.png",
+    fullName: "David Schone",
+    proffession: "CEO",
+  },
 ];

@@ -6,7 +6,9 @@ export function DialogLayout({ trigger, content }: ConfirmDialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-white">{content}</DialogContent>
+      <DialogContent className="sm:max-w-md bg-white w-[calc(100%-32px)]">
+        {content}
+      </DialogContent>
     </Dialog>
   );
 }
