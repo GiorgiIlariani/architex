@@ -16,3 +16,11 @@ declare interface ConfirmDialogProps {
   content: ReactNode;
   onConfirm: () => void;
 }
+
+declare interface ProfileResultCardProps {
+  id: number;
+  coordinates: string;
+  isSaved: boolean;
+  img: string;
+  label: string[];
+}
