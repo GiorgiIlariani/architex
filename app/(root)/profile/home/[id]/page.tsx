@@ -16,20 +16,23 @@ const HomeResultPage = async ({
   );
 
   return (
-    <div className="">
+    <div className="w-full">
       <h1 className="hidden md:block text-[#09121F] text-[45px] font-bold">
         Home
       </h1>
-      <div className="flex flex-col items-center md:flex-row gap-5 md:items-start md:gap-8 lg:gap-[49px] mt-8">
-        <Link
-          href="/profile/home"
-          className="w-full pt-7 flex items-center gap-[10px] h-8 justify-start"
-        >
-          <IoArrowBackOutline size={28} />
-          <span className="text-[#09121F] font-medium text-base">Back</span>
-        </Link>
 
-        <ProfileResultCard {...card[0]} />
+      <div className="flex flex-col md:flex-row gap-5 md:gap-8 lg:gap-[49px] mt-8">
+        <div className="w-full md:w-auto">
+          <Link
+            href="/profile/home"
+            className="pt-7 flex items-center gap-[10px] h-8 self-start"
+          >
+            <IoArrowBackOutline size={28} />
+            <span className="text-[#09121F] font-medium text-base">Back</span>
+          </Link>
+        </div>
+
+        <ProfileResultCard {...card[0]} showAllLabels={true} />
       </div>
     </div>
   );

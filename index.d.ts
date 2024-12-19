@@ -23,4 +23,5 @@ declare interface ProfileResultCardProps {
   isSaved: boolean;
   img: string;
   label: string[];
+  showAllLabels: boolean;
 }

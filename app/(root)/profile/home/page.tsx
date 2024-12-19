@@ -31,7 +31,9 @@ const Profile = () => {
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-[14px] mt-8">
           {result.map((res) => {
-            return <ProfileResultCard key={res.id} {...res} />;
+            return (
+              <ProfileResultCard key={res.id} {...res} showAllLabels={false} />
+            );
           })}
         </div>
       )}
