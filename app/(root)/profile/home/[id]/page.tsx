@@ -2,9 +2,15 @@ import ProfileResultCard from "@/components/shared/ProfileResultCard";
 import { profileHomeResultConstants } from "@/constants";
 import React from "react";
 
-const HomeResultPage = ({ params }: { params: { id: string } }) => {
+const HomeResultPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+
   const card = profileHomeResultConstants.filter(
-    (item) => item.id !== Number(params.id)
+    (item) => item.id !== Number(id)
   );
 
   return (
