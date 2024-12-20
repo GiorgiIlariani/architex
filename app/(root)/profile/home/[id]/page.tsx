@@ -32,7 +32,11 @@ const HomeResultPage = async ({
           </Link>
         </div>
 
-        <ProfileResultCard {...card[0]} showAllLabels={true} />
+        <ProfileResultCard
+          searchResultPage={false}
+          {...card[0]}
+          showAllLabels={true}
+        />
       </div>
     </div>
   );
