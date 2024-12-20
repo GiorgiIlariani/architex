@@ -9,10 +9,13 @@ const ProfileResultCard = ({
   label,
   img,
   showAllLabels, // Default to false
+  searchResultPage,
 }: ProfileResultCardProps) => {
   return (
     <div
-      className="max-w-[561px] w-full py-[19px] px-4 bg-white rounded-[14px]"
+      className={`max-w-[561px] w-full py-[19px] px-4 bg-white rounded-[14px] ${
+        searchResultPage ? "mt-[360px] mx-auto" : ""
+      }`}
       key={id}
     >
       <div className="w-full flex flex-col gap-6">

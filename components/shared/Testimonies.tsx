@@ -72,7 +72,7 @@ const Testimonies = () => {
       </div>
 
       {/* Scrollable container for testimonies */}
-      <div className="flex gap-[55px] overflow-x-auto">
+      <div className="flex gap-[55px] overflow-x-auto scroll-smooth">
         {testimonyConstans
           .slice(currentTestimonyIndex, currentTestimonyIndex + 2)
           .map((testimony) => {

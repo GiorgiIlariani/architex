@@ -24,4 +24,5 @@ declare interface ProfileResultCardProps {
   img: string;
   label: string[];
   showAllLabels: boolean;
+  searchResultPage: boolean;
 }

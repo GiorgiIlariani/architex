@@ -1,4 +1,5 @@
 import HomeCard from "@/components/shared/HomeCard";
+import SearchByLand from "@/components/shared/SearchByLend";
 import Testimonies from "@/components/shared/Testimonies";
 import Image from "next/image";
 
@@ -22,6 +23,8 @@ const HomePage = () => {
             Your ultimate resource for architects, studios, and landowners.
           </p>
         </div>
+
+        <SearchByLand />
 
         <div className="max-w-[1070px] mx-auto mt-[125px] flex flex-col gap-9 lg:gap-[45px]">
           <div className="flex flex-col gap-[10px]">
@@ -89,9 +92,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="w-full bg-[#E9EBF0] rounded-[63px] h-[628px] pl-[185px] pt-[144px] pb-[206px]">
+      {/* <section className="w-full bg-[#E9EBF0] rounded-[63px] h-[628px] pl-[185px] pt-[144px] pb-[206px]">
         <Testimonies />
-      </section>
+      </section> */}
     </>
   );
 };
