@@ -54,81 +54,78 @@ const HeaderComponent = () => {
   let user;
 
   return (
-    <header
-      className={`absolute ${
-        pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
-      } top-[18px] left-4 right-4 mx-auto max-w-[1264px] h-[73px] ${
-        isMobileMenuOpen ? "rounded-t-[21px]" : "rounded-[21px]"
-      }  flex justify-between items-center px-[22px] z-10`}
-    >
-      <Link href="/">
-        <Image
-          src="/assets/images/header-img.png"
-          alt="header img"
-          width={146}
-          height={41}
-        />
-      </Link>
+    <>
+      <div
+        className={`absolute top-[18px] left-4 right-4 mx-auto max-w-[1264px] ${
+          pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
+        } backdrop-blur-[20px] rounded-[21px] z-10`}
+      >
+        <header className="h-[73px] flex justify-between items-center px-[22px]">
+          <Link href="/">
+            <Image
+              src="/assets/images/header-img.png"
+              alt="header img"
+              width={146}
+              height={41}
+            />
+          </Link>
 
-      <div className="items-center gap-7 hidden md:flex">
-        {headerConstants.map((item) => {
-          const isActive = item.route === pathname;
-
-          return (
-            <Link
-              key={item.route}
-              href={item.route}
-              className={`${
-                isActive ? "text-[#F7A33C]" : "text-[#09121F]"
-              } text-sm`}
-            >
-              {item.text}
-            </Link>
-          );
-        })}
-      </div>
-
-      {user ? (
-        <LoggedInUser user={user} />
-      ) : (
-        <div className="flex gap-[14px] items-center">
-          <Button
-            className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
-            onClick={() => openModal("sign-in")}
-          >
-            Log in
-          </Button>
-          <div className="block md:hidden">
-            <button onClick={toggleMobileMenu}>
-              {isMobileMenuOpen ? <MdClose /> : <GiHamburgerMenu />}
-            </button>
+          <div className="items-center gap-7 hidden md:flex">
+            {headerConstants.map((item) => {
+              const isActive = item.route === pathname;
+              return (
+                <Link
+                  key={item.route}
+                  href={item.route}
+                  className={`${
+                    isActive ? "text-[#F7A33C]" : "text-[#09121F]"
+                  } text-sm`}
+                >
+                  {item.text}
+                </Link>
+              );
+            })}
           </div>
-          {isMobileMenuOpen && (
-            <div
-              className={`absolute top-full left-0 right-0  ${
-                pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
-              } rounded-b-[21px] py-4 flex flex-col items-center gap-[14px] md:hidden z-20`}
-            >
-              {headerConstants.map((item) => {
-                const isActive = item.route === pathname;
 
-                return (
-                  <Link
-                    key={item.route}
-                    href={item.route}
-                    className={`${
-                      isActive ? "text-[#F7A33C]" : "text-[#09121F]"
-                    } text-xl`}
-                    onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
-                  >
-                    {item.text}
-                  </Link>
-                );
-              })}
+          {user ? (
+            <LoggedInUser user={user} />
+          ) : (
+            <div className="flex gap-[14px] items-center">
+              <Button
+                className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
+                onClick={() => openModal("sign-in")}
+              >
+                Log in
+              </Button>
+              <div className="block md:hidden">
+                <button onClick={toggleMobileMenu}>
+                  {isMobileMenuOpen ? <MdClose /> : <GiHamburgerMenu />}
+                </button>
+              </div>
             </div>
           )}
-        </div>
-      )}
+        </header>
+
+        {isMobileMenuOpen && (
+          <nav className="rounded-b-[21px] py-4 flex flex-col items-center gap-[14px] md:hidden">
+            {headerConstants.map((item) => {
+              const isActive = item.route === pathname;
+              return (
+                <Link
+                  key={item.route}
+                  href={item.route}
+                  className={`${
+                    isActive ? "text-[#F7A33C]" : "text-[#09121F]"
+                  } text-xl`}
+                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                >
+                  {item.text}
+                </Link>
+              );
+            })}
+          </nav>
+        )}
+      </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-row">
@@ -141,8 +138,8 @@ const HeaderComponent = () => {
                       Verify Your Email
                     </h2>
                     <p className="text-base text-[#09121F]">
-                      We've sent you Code, to sure that email address is yours.
-                      So, check inbox and continue there.{" "}
+                      We've sent you a code to verify your email. Check your
+                      inbox and continue there.
                     </p>
 
                     <div className="mt-[51px]">
@@ -195,6 +192,7 @@ const HeaderComponent = () => {
                   </>
                 )}
               </div>
+
               {!isSignUpWithEmail && !isAuthenticated ? (
                 <>
                   <div className="flex flex-col">
@@ -202,14 +200,14 @@ const HeaderComponent = () => {
                       <Button className="flex items-center gap-[10px] bg-[#1877F2] hover:bg-[#1877F2] rounded-[10px] cursor-pointer">
                         <Image
                           src="/assets/images/registration-facebook.png"
-                          alt="img"
+                          alt="facebook login"
                           width={24}
                           height={24}
                         />
                         <p className="font-medium text-white text-base">
                           {authMethod === "sign-up"
-                            ? "Sign up with facebook"
-                            : "Log in with facebook"}
+                            ? "Sign up with Facebook"
+                            : "Log in with Facebook"}
                         </p>
                       </Button>
 
@@ -243,10 +241,11 @@ const HeaderComponent = () => {
               ) : null}
             </div>
           </div>
+
           <div className="hidden sm:block">
             <Image
               src="/assets/images/registration-modal.png"
-              alt="img"
+              alt="registration modal"
               width={232}
               height={517}
               className="max-w-[232px] max-h-[517px]"
@@ -254,7 +253,7 @@ const HeaderComponent = () => {
           </div>
         </div>
       </Modal>
-    </header>
+    </>
   );
 };
 

@@ -61,7 +61,7 @@ const ProfileResultCard = ({
                 <>
                   {showAllLabels ? (
                     label.map((item, index) => (
-                      <>
+                      <React.Fragment key={index}>
                         <div
                           key={index}
                           className="flex items-center justify-between mb-6"
@@ -74,7 +74,7 @@ const ProfileResultCard = ({
                           </span>
                         </div>
                         <Separator className="mt-[27px] mb-6 border border-[#D9D9D9]" />
-                      </>
+                      </React.Fragment>
                     ))
                   ) : (
                     <div className="flex items-center justify-between mb-6">
