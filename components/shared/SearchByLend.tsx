@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { Tab, Tabs, TabList } from "react-tabs";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { IoCloseOutline } from "react-icons/io5";
 import { Separator } from "../ui/separator";
 
@@ -49,6 +49,20 @@ const SearchByLand = ({ searchResultPage }: { searchResultPage: boolean }) => {
               </Tab>
             ))}
           </TabList>
+
+          {/* Add TabPanel components for each Tab */}
+          <TabPanel className="hidden">
+            <p>Content for Coordinator</p>
+          </TabPanel>
+          <TabPanel className="hidden">
+            <p>Content for Address</p>
+          </TabPanel>
+          <TabPanel className="hidden">
+            <p>Content for MLS Code</p>
+          </TabPanel>
+          <TabPanel className="hidden">
+            <p>Content for Google map link</p>
+          </TabPanel>
         </Tabs>
 
         <div className="max-w-[458px] relative">

@@ -57,7 +57,7 @@ const HeaderComponent = () => {
     <>
       <div
         className={`absolute top-[18px] left-4 right-4 mx-auto max-w-[1264px] ${
-          pathname !== "/" ? "bg-white" : "bg-[#FFFFFF33]"
+          pathname !== "/" ? "bg-white" : "bg-[#FFFFFF99]"
         } backdrop-blur-[20px] rounded-[21px] z-10`}
       >
         <header className="h-[73px] flex justify-between items-center px-[22px]">
