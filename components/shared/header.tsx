@@ -67,6 +67,7 @@ const HeaderComponent = () => {
               alt="header img"
               width={146}
               height={41}
+              className="w-[110px] h-[31px] md:w-[146px] md:h-[41px]"
             />
           </Link>
 
@@ -90,6 +91,13 @@ const HeaderComponent = () => {
           <div className="flex items-center">
             {user ? (
               <>
+                <Image
+                  src="/assets/images/search-line.png"
+                  alt="search icon"
+                  width={32}
+                  height={32}
+                  className="w-6 h-6 md:8 md:8 cursor-pointer mr-0 md:mr-[13px]"
+                />
                 <LoggedInUser user={user} />
                 <div className="md:hidden flex items-center justify-center">
                   <button onClick={toggleMobileMenu}>

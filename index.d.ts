@@ -25,4 +25,5 @@ declare interface ProfileResultCardProps {
   label: string[];
   showAllLabels: boolean;
   searchResultPage: boolean;
+  upgradeToSee?: boolean;
 }

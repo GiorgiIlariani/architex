@@ -1,19 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Separator } from "../ui/separator";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 const ProfileResultCard = ({
   id,
   coordinates,
   label,
   img,
-  showAllLabels, // Default to false
+  showAllLabels,
   searchResultPage,
+  upgradeToSee,
 }: ProfileResultCardProps) => {
+  const [isSaved, setIsSaved] = useState(false);
+  const [showSaveButton, setShowSaveButton] = useState(false);
+
+  // Toggle the saved state
+  const handleSaveClick = () => {
+    setIsSaved((prevState) => !prevState);
+    setShowSaveButton(false); // Hide the button after saving/unsaving
+  };
+
+  // Show the button when the image is clicked
+  const handleImageClick = () => {
+    setShowSaveButton((prev) => !prev);
+  };
+
   return (
     <div
-      className={`max-w-[561px] w-full py-[19px] px-4 bg-white rounded-[14px] ${
+      className={`relative max-w-[561px] w-full py-[19px] px-4 bg-white rounded-[14px] ${
         searchResultPage ? "mt-[360px] mx-auto" : ""
       }`}
       key={id}
@@ -33,12 +51,36 @@ const ProfileResultCard = ({
               </p>
             </div>
 
-            <Image
-              src="/assets/images/saved-profile-res.png"
-              alt="img"
-              width={24}
-              height={24}
-            />
+            <div className="flex flex-col items-center">
+              <div className="cursor-pointer" onClick={handleImageClick}>
+                {isSaved ? (
+                  <Image
+                    src="/assets/images/saved-profile-res.png"
+                    alt="Saved"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6 object-contain"
+                  />
+                ) : (
+                  <Image
+                    src="/assets/images/not-saved-profile-res.png"
+                    alt="Not saved"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6 object-contain"
+                  />
+                )}
+              </div>
+
+              {showSaveButton && (
+                <Button
+                  className="absolute -top-2 right-1 mt-[-10px] mr-[-10px] bg-[#09121F] hover:bg-[#09121F] text-white text-sm rounded-[14px]"
+                  onClick={handleSaveClick}
+                >
+                  {isSaved ? "Unsave" : "Save"}
+                </Button>
+              )}
+            </div>
           </div>
 
           <Image
@@ -89,8 +131,6 @@ const ProfileResultCard = ({
                       </span>
                     </div>
                   )}
-
-                  {/* <Separator className="mt-[27px] mb-6 border border-[#D9D9D9]" /> */}
                 </>
               )}
             </div>
@@ -105,6 +145,25 @@ const ProfileResultCard = ({
         >
           See more
         </Link>
+
+        {upgradeToSee && (
+          <div className="flex flex-col gap-[18px] items-center pb-[52px]">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-[28px] text-[#09121F] font-bold">
+                Upgrade to see more
+              </h2>
+              <p className="text-[#747D8A]">
+                Our applications feature is available to use for <br /> feed
+                listings if you have a connected
+              </p>
+            </div>
+            <Link href="/pricing">
+              <Button className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F]">
+                Pricing
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
