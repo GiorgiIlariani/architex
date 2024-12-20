@@ -16,37 +16,38 @@ const ProfileLeftSidebar = () => {
       {/* <h1 className="md:hidden block text-[#09121F] text-[40px] font-bold pb-8 text-center">
         Home
       </h1> */}
-
-      {/* Mobile View with Horizontal Scroll (Swiper Integration) */}
-      <div className="flex md:hidden max-w-full snap-x snap-mandatory space-x-3 overflow-x-auto px-4 justify-start sm:justify-center no-scrollbar w-full">
-        {/* <Swiper
+      <div className="flex md:hidden max-w-full snap-x snap-mandatory space-x-3 overflow-x-auto justify-start sm:justify-center no-scrollbar w-full">
+        <Swiper
           mousewheel
           direction="horizontal"
           pagination={false}
           className="categories"
           spaceBetween={18}
           slidesPerView="auto"
-          // style={{ width: "100vw" }} // Adjust for padding/margin
-        > */}
-        {profileLeftSidebarConstants.map((link) => {
-          const isActive = link.route === pathname;
+        >
+          {profileLeftSidebarConstants.map((link) => {
+            const isActive = link.route === pathname;
 
-          return (
-            // <SwiperSlide key={link.route} style={{ width: "auto" }}>
-            <Link
-              key={link.route}
-              href={link.route}
-              className={`shrink-0 snap-start py-[11px] px-[12px]  text-base flex items-center gap-[10px] rounded-[10px] ${
-                isActive ? "bg-[#F7A33C]" : "bg-white"
-              }`}
-            >
-              <Image src={link.img} alt={link.text} width={24} height={24} />
-              {link.text}
-            </Link>
-            // </SwiperSlide>
-          );
-        })}
-        {/* </Swiper> */}
+            return (
+              <SwiperSlide key={link.route} style={{ width: "auto" }}>
+                <Link
+                  href={link.route}
+                  className={`shrink-0 snap-start py-[11px] px-[12px]  text-base flex items-center gap-[10px] rounded-[10px] ${
+                    isActive ? "bg-[#F7A33C]" : "bg-white"
+                  }`}
+                >
+                  <Image
+                    src={link.img}
+                    alt={link.text}
+                    width={24}
+                    height={24}
+                  />
+                  {link.text}
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
 
       <aside className="hidden md:block w-[334px] min-h-screen max-h-screen rounded-[21px] p-[14px] lg:p-[22px] bg-[#FFFFFF99]">
