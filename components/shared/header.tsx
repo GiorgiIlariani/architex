@@ -47,11 +47,11 @@ const HeaderComponent = () => {
     setIsSignUpWithEmail(false);
   };
 
-  // let user = {
-  //   firstLetterOfName: "G",
-  // };
+  let user = {
+    firstLetterOfName: "G",
+  };
 
-  let user;
+  // let user;
 
   return (
     <>
@@ -79,7 +79,7 @@ const HeaderComponent = () => {
                   href={item.route}
                   className={`${
                     isActive ? "text-[#F7A33C]" : "text-[#09121F]"
-                  } text-sm`}
+                  } text-sm hover:text-[#F7A33C] transition`}
                 >
                   {item.text}
                 </Link>
@@ -87,23 +87,32 @@ const HeaderComponent = () => {
             })}
           </div>
 
-          {user ? (
-            <LoggedInUser user={user} />
-          ) : (
-            <div className="flex gap-[14px] items-center">
-              <Button
-                className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
-                onClick={() => openModal("sign-in")}
-              >
-                Log in
-              </Button>
-              <div className="block md:hidden">
-                <button onClick={toggleMobileMenu}>
-                  {isMobileMenuOpen ? <MdClose /> : <GiHamburgerMenu />}
-                </button>
-              </div>
-            </div>
-          )}
+          <div className="flex items-center">
+            {user ? (
+              <>
+                <LoggedInUser user={user} />
+                <div className="md:hidden flex items-center justify-center">
+                  <button onClick={toggleMobileMenu}>
+                    {isMobileMenuOpen ? <MdClose /> : <GiHamburgerMenu />}
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <Button
+                  className="hover:bg-[#09121F] bg-[#09121F] text-white font-semibold text-sm rounded-[10px]"
+                  onClick={() => openModal("sign-in")}
+                >
+                  Log in
+                </Button>
+                <div className="block md:hidden ">
+                  <button onClick={toggleMobileMenu}>
+                    {isMobileMenuOpen ? <MdClose /> : <GiHamburgerMenu />}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
         </header>
 
         {isMobileMenuOpen && (
@@ -197,7 +206,7 @@ const HeaderComponent = () => {
                 <>
                   <div className="flex flex-col">
                     <div className="flex flex-col gap-4 mt-16">
-                      <Button className="flex items-center gap-[10px] bg-[#1877F2] hover:bg-[#1877F2] rounded-[10px] cursor-pointer">
+                      {/* <Button className="flex items-center gap-[10px] bg-[#1877F2] hover:bg-[#1877F2] rounded-[10px] cursor-pointer text-white">
                         <Image
                           src="/assets/images/registration-facebook.png"
                           alt="facebook login"
@@ -208,6 +217,20 @@ const HeaderComponent = () => {
                           {authMethod === "sign-up"
                             ? "Sign up with Facebook"
                             : "Log in with Facebook"}
+                        </p>
+                      </Button> */}
+
+                      <Button className="flex items-center gap-[10px] bg-[#E9EBF0] hover:bg-[#E9EBF0] rounded-[10px] cursor-pointer">
+                        <Image
+                          src="/assets/images/registration-google.png"
+                          alt="google login"
+                          width={24}
+                          height={24}
+                        />
+                        <p className="font-medium text-[#09121F] text-base">
+                          {authMethod === "sign-up"
+                            ? "Sign up with Google"
+                            : "Log in with Google"}
                         </p>
                       </Button>
 

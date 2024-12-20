@@ -8,23 +8,23 @@ body {
 
 @layer utilities {
   .input {
-    @apply bg-white h-[55px] rounded-[19px] text-[#09121F] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
+    @apply bg-white h-[55px] rounded-[19px] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C] placeholder-red-300;
   }
 
   .auth-input {
-    @apply bg-white h-[45px] rounded-[10px] text-[#09121F] px-[18px] py-[13px] text-base border border-[#E9EBF0] focus:border focus:border-[#F7A33C];
+    @apply bg-white h-[45px] rounded-[10px] px-[18px] py-[13px] text-base border border-[#E9EBF0] focus:border focus:border-[#F7A33C];
   }
 
   .profile-settings-input {
-    @apply bg-white h-[41px] rounded-[10px] text-[#09121F] px-6 py-[10px] text-base border-white focus:border focus:border-[#F7A33C];
+    @apply bg-white h-[41px] rounded-[10px] px-6 py-[10px] text-base border-white focus:border focus:border-[#F7A33C];
   }
 
   .textarea {
-    @apply bg-white rounded-[19px] text-[#09121F] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
+    @apply bg-white rounded-[19px] px-6 py-[18px] text-base border-white focus:border focus:border-[#F7A33C];
   }
 
   .profileChangePassword-input {
-    @apply bg-white rounded-[10px] text-[#09121F] px-[18px] py-[13px] text-base border-[#00000040] border;
+    @apply bg-white rounded-[10px] px-[18px] py-[13px] text-base border-[#00000040] text-[#09121F] border;
   }
 }
 
@@ -37,5 +37,19 @@ body {
   display: none;
 }
 
-.header-blur {
+/* .auth-input::placeholder {
+  color: #a0aec0 !important;
 }
+
+.input {
+  color: #a0aec0 !important;
+}
+.profile-settings-input {
+  color: #a0aec0 !important;
+}
+.textarea {
+  color: #a0aec0 !important;
+}
+.profileChangePassword-input {
+  color: #a0aec0 !important;
+} */

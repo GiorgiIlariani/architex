@@ -49,7 +49,7 @@ export function SignUpWithEmailForm() {
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className="auth-input placeholder-[#747D8A] "
+                    className="auth-input placeholder-gray-400"
                     placeholder="Enter First Name"
                     {...field}
                   />
@@ -155,7 +155,7 @@ export function SignUpWithEmailForm() {
                 <FormControl>
                   <Input
                     type="password"
-                    className="input"
+                    className="auth-input"
                     placeholder="Repeat Password"
                     {...field}
                   />

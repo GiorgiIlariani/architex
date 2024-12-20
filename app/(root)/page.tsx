@@ -24,7 +24,7 @@ const HomePage = () => {
           </p>
         </div>
 
-        <SearchByLand />
+        <SearchByLand searchResultPage={false} />
 
         <div className="max-w-[1070px] mx-auto mt-[125px] flex flex-col gap-9 lg:gap-[45px]">
           <div className="flex flex-col gap-[10px]">
@@ -92,9 +92,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* <section className="w-full bg-[#E9EBF0] rounded-[63px] h-[628px] pl-[185px] pt-[144px] pb-[206px]">
+      <section className="relative w-full lg:flex xl:gap-[70px] bg-[#E9EBF0] rounded-[63px]  pl-[16px] lg:pl-[185px] pt-[65px] lg:pt-[144px] pb-[118px] lg:pb-[206px]">
         <Testimonies />
-      </section> */}
+      </section>
     </>
   );
 };

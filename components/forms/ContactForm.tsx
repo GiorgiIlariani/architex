@@ -82,6 +82,12 @@ export function ContactForm() {
             </FormItem>
           )}
         />
+
+        <div className="w-full flex items-end justify-end">
+          <Button className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F] w-full md:w-auto">
+            Send
+          </Button>
+        </div>
       </form>
     </Form>
   );

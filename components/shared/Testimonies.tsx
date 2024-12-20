@@ -2,10 +2,8 @@
 
 import { testimonyConstans } from "@/constants";
 import Image from "next/image";
-import React, { useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import React from "react";
 
-// carousel
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -16,97 +14,53 @@ import {
 } from "@/components/ui/carousel";
 
 const Testimonies = () => {
-  const [currentTestimonyIndex, setCurrentTestimonyIndex] = useState(0);
-
-  const handlePrevClick = () => {
-    setCurrentTestimonyIndex((prevIndex) =>
-      prevIndex === 0 ? testimonyConstans.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextClick = () => {
-    setCurrentTestimonyIndex((prevIndex) =>
-      prevIndex === testimonyConstans.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const isPrevDisabled = currentTestimonyIndex === 0;
-  const isNextDisabled = currentTestimonyIndex === testimonyConstans.length - 1;
-
   return (
-    <div className="w-full flex gap-[70px]">
-      <div className="flex flex-col items-start justify-between">
-        <h3 className="text-[45px] text-[#09121F] font-bold">
-          Read testimony <br /> from our users
-        </h3>
+    <>
+      <h3 className="text-[28px] xl:text-[45px] text-[#09121F] font-bold mr-[54px] xl:mr-0 lg:max-w-[350px] h-max">
+        Read testimony from our users
+      </h3>
 
-        {/* Left and Right icons for scrolling */}
-        <div className="flex gap-4 mt-4">
-          <div
-            className={`bg-[#FFFFFF99] rounded-[13px] p-3 ${
-              isPrevDisabled ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            <IoIosArrowBack
-              onClick={handlePrevClick}
-              size={24}
-              className={`cursor-pointer text-[#09121F] text-[30px] ${
-                isPrevDisabled ? "cursor-not-allowed" : ""
-              }`}
-            />
-          </div>
-          <div
-            className={`bg-[#FFFFFF99] rounded-[13px] p-3 ${
-              isNextDisabled ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            <IoIosArrowForward
-              onClick={handleNextClick}
-              size={24}
-              className={`cursor-pointer text-[#09121F] text-[30px] ${
-                isNextDisabled ? "cursor-not-allowed" : ""
-              }`}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Scrollable container for testimonies */}
-      <div className="flex gap-[55px] overflow-x-auto scroll-smooth">
-        {testimonyConstans
-          .slice(currentTestimonyIndex, currentTestimonyIndex + 2)
-          .map((testimony) => {
-            return (
-              <div
-                className="max-w-[410px] bg-[#FFFFFF99] rounded-[21px] p-[14px] md:p-[22px]"
-                key={testimony.id}
-              >
-                <div className="bg-white items-center gap-4 p-[25px] rounded-[19px]">
-                  <h4 className="text-[#09121F] text-[25px] font-bold">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        className="static w-full lg:w-4/6 h-max mt-[35px] lg:my-0"
+      >
+        <CarouselContent className="lg:ml-0">
+          {testimonyConstans.map((testimony) => (
+            <CarouselItem key={testimony.id} className=" basis-auto">
+              <Card className="w-[302px] lg:w-[410px] bg-[#FFFFFF99] bg:backdrop-blur-[20px] rounded-[21px] p-[14px] shadow-none">
+                <CardContent className="bg-[#FFFFFF] rounded-[19px] px-[16px] lg:px-[25px] py-[18px] lg:pt-[25px] lg:pb-[61px]">
+                  <h4 className="text-[20px] font-bold mb-2">
                     {testimony.title}
                   </h4>
-                  <p className="mt-2 text-[#0912a1F] text-sm text-wrap">
-                    {testimony.details}
-                  </p>
-                </div>
+                  <p className="text-[14px] font-[400]">{testimony.details}</p>
+                </CardContent>
 
-                <div className="mt-[22px] flex items-center w-full gap-4">
+                <div className="flex items-center gap-[16px] mt-[22px]">
                   <Image
                     src={testimony.img}
-                    alt={testimony.title}
-                    width={45}
                     height={45}
+                    width={45}
+                    alt="profile image"
                   />
+
                   <p className="font-semibold text-[13px]">
                     {testimony.fullName}{" "}
                     <span className="font-normal">{testimony.proffession}</span>
                   </p>
                 </div>
-              </div>
-            );
-          })}
-      </div>
-    </div>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <div className="absolute bottom-20 lg:top-[235px] left-16 lg:left-[235px]">
+          <CarouselPrevious className="border-none w-[48px] h-[48px] bg-[#FFFFFF] rounded-[13px]" />
+          <CarouselNext className="border-none w-[48px] h-[48px] bg-[#FFFFFF] rounded-[13px] -right-[68px]" />
+        </div>
+      </Carousel>
+    </>
   );
 };
 

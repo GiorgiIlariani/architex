@@ -35,14 +35,6 @@ const ContactUsPage = () => {
           <div className="w-full bg-[#FFFFFF99] rounded-[21px] p-[14px] md:p-[22px]">
             <ContactForm />
           </div>
-
-          <Button
-            type="submit"
-            form="contact-form"
-            className="bg-[#09121F] text-white font-semibold text-sm rounded-[10px] hover:bg-[#09121F] w-full md:w-auto"
-          >
-            Send
-          </Button>
         </div>
       </div>
     </section>

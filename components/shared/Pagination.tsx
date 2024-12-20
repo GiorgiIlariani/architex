@@ -13,7 +13,7 @@ const Pagination: React.FC<PaginationProps> = ({
       <Button
         onClick={onPrevious}
         disabled={currentPage === 1}
-        className={`text-[20px] ${
+        className={`text-[20px] bg-transparent !border-none shadow-none hover:underline transition ${
           currentPage === 1 ? "text-[#00000040]" : "text-[#09121F]"
         }`}
       >
@@ -22,7 +22,7 @@ const Pagination: React.FC<PaginationProps> = ({
       <Button
         onClick={onNext}
         disabled={currentPage === totalPages}
-        className={`text-[20px] ${
+        className={`text-[20px] bg-transparent !border-none shadow-none hover:underline transition ${
           currentPage === totalPages ? "text-[#00000040]" : "text-[#09121F]"
         }`}
       >

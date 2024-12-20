@@ -13,8 +13,7 @@ const LoggedInUser = ({ user }: { user: { firstLetterOfName: string } }) => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>
-            {" "}
+          <NavigationMenuTrigger className="pr-[13px]">
             <div className="w-[37px] h-[37px] flex items-center justify-center bg-[#D9D9D9] rounded-full">
               <p className="text-sm text-[#09121F]">
                 {user?.firstLetterOfName}
@@ -23,7 +22,10 @@ const LoggedInUser = ({ user }: { user: { firstLetterOfName: string } }) => {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
             <div className="w-[121px] p-3 flex flex-col">
-              <Link href="/profile" className="py-1 px-[10px] text-[#09121F]">
+              <Link
+                href="/profile/home"
+                className="py-1 hover:bg-[#E9EBF0] transition px-[10px] text-[#09121F]"
+              >
                 My Profile
               </Link>
               <NavigationMenuLink className="py-1 px-[10px] cursor-pointer text-[#E10C0C]">
