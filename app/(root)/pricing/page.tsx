@@ -1,6 +1,8 @@
 import PriceCard from "@/components/shared/PriceCard";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 const PricingPage = () => {
   return (
@@ -16,6 +18,9 @@ const PricingPage = () => {
 
         <div className="flex items-center gap-2">
           <span className="text-[#09121F] font-medium">Monthly</span>
+
+          {/* <Switch id="" className="bg-[#09121F]" /> */}
+
           <label className="relative inline-flex cursor-pointer items-center">
             <input id="switch" type="checkbox" className="peer sr-only" />
             <div className="peer h-7 w-14 rounded-full border bg-slate-200 p-1 after:absolute after:left-[4px] after:top-[4px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-transform after:content-[''] peer-checked:bg-slate-800 peer-checked:after:translate-x-7 peer-checked:after:border-white"></div>

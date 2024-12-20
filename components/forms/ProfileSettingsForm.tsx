@@ -58,7 +58,7 @@ export function ProfileSettingsForm() {
         className="space-y-[25px] mt-8"
         id="contact-form"
       >
-        <div className="flex flex-col gap-[14px] items-start md:items-end md:gap-10">
+        <div className="flex flex-col md:flex-row gap-[14px] items-start md:items-end md:gap-10">
           <div className="flex gap-[23px] md:gap-10">
             <FormField
               control={form.control}
@@ -106,7 +106,7 @@ export function ProfileSettingsForm() {
 
         <Separator className="border border-[#D9D9D9] my-7" />
 
-        <div className="flex flex-col gap-[14px] items-start md:items-end md:gap-10">
+        <div className="flex flex-col md:flex-row gap-[14px] items-start md:items-end md:gap-10">
           <div className="flex gap-[23px] md:gap-10">
             <FormField
               control={form.control}

@@ -5,6 +5,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
+// carousel
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 const Testimonies = () => {
   const [currentTestimonyIndex, setCurrentTestimonyIndex] = useState(0);
 
@@ -22,6 +32,7 @@ const Testimonies = () => {
 
   const isPrevDisabled = currentTestimonyIndex === 0;
   const isNextDisabled = currentTestimonyIndex === testimonyConstans.length - 1;
+
   return (
     <div className="w-full flex gap-[70px]">
       <div className="flex flex-col items-start justify-between">
@@ -61,7 +72,7 @@ const Testimonies = () => {
       </div>
 
       {/* Scrollable container for testimonies */}
-      <div className="flex gap-[55px] overflow-x-auto scroll-smooth">
+      <div className="flex gap-[55px] overflow-x-auto">
         {testimonyConstans
           .slice(currentTestimonyIndex, currentTestimonyIndex + 2)
           .map((testimony) => {
@@ -74,7 +85,7 @@ const Testimonies = () => {
                   <h4 className="text-[#09121F] text-[25px] font-bold">
                     {testimony.title}
                   </h4>
-                  <p className="mt-2 text-[#09121F] text-sm text-wrap">
+                  <p className="mt-2 text-[#0912a1F] text-sm text-wrap">
                     {testimony.details}
                   </p>
                 </div>
